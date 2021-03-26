@@ -28,15 +28,11 @@ export class CoffeesController {
     @Protocol('https') protocol: string,
     @Query() paginationQuery: PaginationQueryDto,
   ) {
-    console.log(protocol);
-
     return this.coffeesService.findAll(paginationQuery);
   }
 
   @Get(':id')
   findOne(@Param('id', ParseIntPipe) id: number) {
-    console.log(id);
-
     return this.coffeesService.findOne(id);
   }
 
